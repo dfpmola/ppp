@@ -5,7 +5,7 @@ project(${MODULE_NAME})
 set(LIB_NAME  lib${MODULE_NAME})
 set(APP_NAME  ${MODULE_NAME}_app)
 set(TEST_NAME ${MODULE_NAME}_test)
-
+find_package(Threads)
 message(STATUS "-------- Running CMake for module ${MODULE_NAME} --------")
 
 if (CMAKE_SIZEOF_VOID_P MATCHES "4")

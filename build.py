@@ -817,7 +817,7 @@ class Builder(object):
         self.run_cmd('npm run gen-pwa-icons')
         if self._run_tests:
             self.run_cmd('npx ng test --browsers=ChromeHeadless --watch=false')
-        self.run_cmd('npx ionic build --prod')
+        self.run_cmd('./node_modules/.bin/ng run app:build:production')
         os.chdir(self._root_dir)
 
     def setup_webapp(self):
@@ -827,7 +827,8 @@ class Builder(object):
         # Build the web app
         if not self._no_npm:
             os.chdir(self.webapp_path())
-            self.run_cmd('npm install --no-optional')
+            self.run_cmd('node -v')
+            self.run_cmd('npm install --no-optional --legacy-peer-deps')
             os.chdir(self._root_dir)
 
     def load_third_party_config(self):

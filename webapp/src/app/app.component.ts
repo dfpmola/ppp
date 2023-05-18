@@ -6,6 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SettingsService } from './services/settings.service';
 import { SwUpdate } from '@angular/service-worker';
 
+declare const VERSION: string;
+
+
 @Component({
   selector: 'app-root',
   template: `
@@ -37,6 +40,7 @@ import { SwUpdate } from '@angular/service-worker';
   styleUrls: []
 })
 export class AppComponent implements OnInit {
+  private title = 'Version: ' + VERSION;
   public appPages = [
     {
       title: 'Home',

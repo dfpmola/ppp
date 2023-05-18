@@ -25,7 +25,7 @@ export class PhotoStandardService {
     this.setSelectedStandard(defaultOne);
     // TODO: Get last selected standard from local storage
     // TODO: Fetch newly defined standards
-    this.getCountryCode();
+    //this.getCountryCode();
   }
 
   getSelectedStandard(): PhotoStandard {
@@ -49,13 +49,13 @@ export class PhotoStandardService {
       return cc.country_code || cc.alpha2; // e.g. "US"
     }
 
-    let req = 'https://api.ipgeolocationapi.com/geolocate';
+    /*let req = 'https://api.ipgeolocationapi.com/geolocate';
     if (location.protocol === 'http:') {
       const key = 'f006103a2a5632a2e6987fde2445cf66';
       req = `http://api.ipstack.com/check?access_key=${key}`;
     }
     this.http.get(req).subscribe(res => {
       this.localStorage.setItem(COUNTRY_CODE, res);
-    });
+    });*/
   }
 }
